@@ -1,0 +1,64 @@
+.organizacion {
+	background: #faf8f7;
+}
+
+.organizacion .organization-steps {
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 500;
+	line-height: 2em;
+	font-size: 75px;
+	color: transparent;
+	-webkit-text-stroke: 1px #BD945A;
+}
+
+.organizacion .bg-container .steps-container {
+	background-color: #fff;
+	border: 1px solid #F6F1F0;
+	border-right: 0;
+}
+
+.organizacion .bg-container .steps-container a {
+	background-color: #af8383;
+	transition: all .4s;
+	font-weight: 600;
+}
+
+.organizacion .bg-container .steps-container a:hover {
+	background-color: #947070;
+}
+
+
+.organizacion .bg-container .steps-container:hover .organization-subtitles {
+	color: white;
+	transition: all 0.4s;
+}
+
+.organizacion .organization-subtitles {
+	font-size: 21px;
+	text-transform: uppercase;
+	font-family: 'Cormorant Garamond', serif;
+}
+
+.organizacion .steps-container {
+	background-image: url(../../assets/background_3.jfif);
+}
+
+.organizacion .steps-container div {
+	background-color: white;
+	transition: all .4s;
+}
+
+.organizacion .steps-container div:hover {
+	background-color: rgba(0, 0, 0, 0.615);
+}
+
+.organizacion .dresscode p {
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: bold;
+	color: #BD945A;
+}
+
+.organizacion .dresscode span {
+	font-family: 'Alex Brush', cursive;
+	font-size: 46px;
+}

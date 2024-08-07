@@ -1,0 +1,5 @@
+.agenda a {
+	background-color: #af8383;
+    transition: all .4s;
+    font-weight: 600;
+}

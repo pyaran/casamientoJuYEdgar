@@ -1,0 +1,27 @@
+.regalos {
+	background-color: #af8383;
+}
+
+.regalos .icon {
+	background-color: rgb(121 85 72 / 1);
+}
+
+.modal-regalos h2 {
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: bold;
+    color: #BD945A;
+	font-size: 32px;
+}
+
+.modal-fields .field {
+	background-color: #f1f1f1;
+	margin: 12px 0;
+}
+
+.modal-fields .field p {
+	margin-right: 6px;
+}
+
+.modal-fields .field button {
+	background-color: #af8383;
+}

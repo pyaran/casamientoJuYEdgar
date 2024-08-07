@@ -1,0 +1,9 @@
+.header__menu--close, .header__menu--open {
+	outline: none;
+	border: none;
+}
+
+.header__menu--close:focus, .header__menu--open:focus {
+	outline: none;
+	border: none;
+}
