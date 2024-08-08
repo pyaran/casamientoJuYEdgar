@@ -3,3 +3,19 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+.fecha2 {
+	display: flex;
+	gap: 10px;
+}
+
+.fecha2 h2 {
+    background-color: #d4a5a5; /* Background color for each box */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside each box */
+    text-align: center; /* Center text inside each box */
+    min-width: 80px; /* Optional: Minimum width for consistency */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    color: #000; /* Text color */
+    font-family: 'Merienda', cursive; /* Apply Merienda font if imported */
+  }
