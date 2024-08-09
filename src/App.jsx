@@ -12,6 +12,7 @@ import BgMusic from "./assets/musica.mp3";
 
 import "./App.css"
 import { useState, useRef } from "react";
+import Fotos from "./components/Fotos/Fotos";
 
 export function App() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
@@ -44,10 +45,11 @@ export function App() {
         <Menu />
         <Nosotros />
         <Cancion />
+        <Fotos />
         <Instagram />
         <Asistencia />
         <Agenda />
-        <p className="p-8 agradecimiento">¡Gracias por formar parte de uno de los días más felices de nuestras vidas!</p>
+        <p className="p-8 agradecimiento text-center">¡Gracias por formar parte de uno de los días más felices de nuestras vidas!</p>
       </main>
       <audio ref={audioRef} loop>
         <source src={BgMusic} type="audio/mpeg" />

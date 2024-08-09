@@ -58,6 +58,11 @@
 	color: #BD945A;
 }
 
+.organizacion .dresscode p:last-of-type {
+	font-size: 24px;
+	color: black;
+}
+
 .organizacion .dresscode span {
 	font-family: 'Alex Brush', cursive;
 	font-size: 46px;
