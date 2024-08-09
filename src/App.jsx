@@ -15,7 +15,7 @@ import { useState, useRef } from "react";
 import Fotos from "./components/Fotos/Fotos";
 
 export function App() {
-  const [isMusicPlaying, setIsMusicPlaying] = useState(true);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef(null);
 
   const handlePlayPause = () => {
