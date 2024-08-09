@@ -31,7 +31,7 @@ export default function Organizacion() {
 					<svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" className="dress" height="50px" width="50px" xmlns="http://www.w3.org/2000/svg"><path d="M288 16l32 16s-25.2 44.02-16 64c5 10.8 32 16 32 16-16 32-32 80-32 96 80 48 80 144 160 176 0 64-80 112-208 112S48 448 48 384c80-32 80-128 160-176 0-16-16-64-32-96 0 0 27-5.2 32-16 9.2-19.98-16-64-16-64l32-16c0 32 16 48 32 48s32-16 32-48z"></path></svg>
 				</div>
 				<span className="block mt-12 text-center">Formal elegante</span>
-				<p className="text-black text-center pt-8">En nuestra boda, el blanco y tonalidades afines está reservado para una sola persona:
+				<p className="text-black text-center pt-8">En nuestra boda, el blanco y tonalidades afines estan reservados para una sola persona:
 					¡La novia!
 					¡Vamos a iluminar la fiesta con otros colores!</p>
 			</div>
