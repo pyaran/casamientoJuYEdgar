@@ -1,3 +1,4 @@
+import React, { useEffect, useState, useRef } from "react";
 import Header from "./components/Header/Header";
 import Banner from "./components/Banner/Banner";
 import Organizacion from "./components/Organizacion/Organizacion";
@@ -8,11 +9,10 @@ import Cancion from "./components/Cancion/Cancion";
 import Instagram from "./components/Instagram/Instagram";
 import Asistencia from "./components/Asistencia/Asistencia";
 import Agenda from "./components/Agenda/Agenda";
+import Fotos from "./components/Fotos/Fotos";
 import BgMusic from "./assets/musica.mp3";
 
-import "./App.css"
-import { useState, useRef } from "react";
-import Fotos from "./components/Fotos/Fotos";
+import "./App.css";
 
 export function App() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
@@ -27,31 +27,66 @@ export function App() {
     setIsMusicPlaying(!isMusicPlaying);
   };
 
-  function ensureLightMode() {
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  
-    if (prefersDarkScheme.matches) {
-      document.body.style.backgroundColor = "white";
-      document.body.style.color = "black";
+  useEffect(() => {
+    function ensureLightMode() {
+      const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+      if (prefersDarkScheme.matches) {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+      }
     }
-  }
-  
-  ensureLightMode();
-  
-  // Optional: Listen for changes in the theme preference
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ensureLightMode);
-  
+
+    ensureLightMode();
+
+    // Listen for changes in the theme preference
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    mediaQuery.addEventListener("change", ensureLightMode);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      mediaQuery.removeEventListener("change", ensureLightMode);
+    };
+  }, []); // Empty dependency array ensures this runs once on mount
 
   return (
     <>
       <Header />
-      <button className="z-50 fixed right-4 top-4 bg-amber-300 text-black border border-black border-solid" onClick={handlePlayPause}>
-        {isMusicPlaying ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-        </svg> : <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
-        </svg>
-        }
+      <button
+        className="z-50 fixed right-4 top-4 bg-amber-300 text-black border border-black border-solid"
+        onClick={handlePlayPause}
+      >
+        {isMusicPlaying ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
+            />
+          </svg>
+        )}
       </button>
       <main className="text-black">
         <Banner />
@@ -64,7 +99,10 @@ export function App() {
         <Instagram />
         <Asistencia />
         <Agenda />
-        <p className="p-8 agradecimiento text-center">¡Gracias por formar parte de uno de los días más felices de nuestras vidas!</p>
+        <p className="p-8 agradecimiento text-center">
+          ¡Gracias por formar parte de uno de los días más felices de nuestras
+          vidas!
+        </p>
       </main>
       <audio ref={audioRef} loop>
         <source src={BgMusic} type="audio/mpeg" />
