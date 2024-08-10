@@ -27,6 +27,21 @@ export function App() {
     setIsMusicPlaying(!isMusicPlaying);
   };
 
+  function ensureLightMode() {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  
+    if (prefersDarkScheme.matches) {
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+    }
+  }
+  
+  ensureLightMode();
+  
+  // Optional: Listen for changes in the theme preference
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ensureLightMode);
+  
+
   return (
     <>
       <Header />
